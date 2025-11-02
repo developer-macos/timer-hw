@@ -6,7 +6,6 @@ function Timer() {
   let minutes = 0;
 
   startButton.addEventListener("click", () => {
-    // Prevent multiple intervals
     if (startButton.interval) return;
 
     startButton.interval = setInterval(() => {
@@ -36,3 +35,20 @@ Timer()
 
 
 let secondsTimer = document.getElementById("seconds_timer")
+let startSecond = document.getElementById("startSecond")
+function SecondsTimer() {
+  let seconds = 30;
+  startSecond.addEventListener('click', () => {
+    startSecond.interval = setInterval(() => {
+      seconds--
+      if (seconds === 10) {
+        alert('10 Seconds left!');
+      }
+      if (seconds === 0) {
+        startSecond.true;
+      }
+      secondsTimer.textContent = `Time left: ${seconds}`
+    }, 300)
+  })
+  
+}
